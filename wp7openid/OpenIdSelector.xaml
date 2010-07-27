@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="wp7openid.OpenIdSelector"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneChromeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Sign in using" HorizontalAlignment="Center" Margin="0 0 0 5" />
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="GoogleSignInButton" Click="GoogleSignInButton_Click">
+                <TextBlock Text="Google" />
+            </Button>
+            <Button x:Name="YahooSignInButton" Click="YahooSignInButton_Click">
+                <TextBlock Text="Yahoo!" />
+            </Button>
+            <Button x:Name="MyOpenIdSignInButton" Click="MyOpenIdSignInButton_Click">
+                <TextBlock Text="myOpenID" />
+            </Button>
+        </StackPanel>
+        <TextBlock Grid.Row="2" Text="or enter your own:" HorizontalAlignment="Center" Margin="0 0 0 5" />
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" x:Name="OpenIdUriTextBox" />
+            <Button Grid.Column="1" x:Name="GoButton" Click="GoButton_Click">
+                <TextBlock Text="Go" />
+            </Button>
+        </Grid>
+        <Button Grid.Row="4" x:Name="CancelButton" Click="CancelButton_Click">
+            <TextBlock Text="Cancel" />
+        </Button>
+    </Grid>
+</UserControl>
